@@ -1,0 +1,228 @@
+/* ----------------------------------------------  RESPONSIVE - SAIMON GONZÁLEZ  -------------------------------------------- */
+
+@media (max-width: 1199px) {
+    #cuerpo {
+        padding-left: 60px;
+        padding-right: 5%;
+    }
+    .inicio {
+        margin-bottom: 260px;
+    }
+    .marco {
+        width: 85%;
+        min-height: 280px;
+    }
+    #foto-perfil {
+        width: 240px;
+        margin-left: 30px;
+    }
+    .contacto .boton {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .proyectos {
+        margin-top: var(--space-section-sm) !important;
+    }
+    .proyectos .proyecto-item {
+        margin-bottom: 120px;
+    }
+}
+
+@media (max-width: 991px) {
+    .logo-principal {
+        height: 56px;
+        min-height: 56px;
+        max-width: 260px;
+    }
+    #cuerpo {
+        margin: 0 40px;
+        padding: 5%;
+        max-width: 100%;
+    }
+    .sobreMi {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    .contacto {
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+    }
+    .subtitulo-pestana {
+        margin-bottom: 50px;
+    }
+    #menu {
+        text-align: center;
+        margin-top: 100px;
+    }
+    #navbarNav ul li a {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+    .boton {
+        width: auto;
+        margin: 20px auto 0;
+        display: inline-block;
+    }
+    .info-sobreMi {
+        width: 100% !important;
+    }
+    #foto-perfil {
+        position: relative;
+        z-index: 2;
+        top: 0;
+        width: 60%;
+        max-width: 280px;
+        margin: 0 auto 2rem;
+        display: block;
+    }
+    .cont-fotoPerfil {
+        width: 100%;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .marco {
+        position: absolute;
+        z-index: 1;
+        top: 28px;
+        left: 50%;
+        transform: translateX(calc(-50% + 14px));
+        width: 65%;
+        max-width: 300px;
+        min-height: 280px;
+        height: 320px;
+    }
+    .proyectos {
+        margin-top: var(--space-section-sm) !important;
+    }
+    .proyecto-item {
+        flex-direction: column !important;
+        margin-bottom: var(--space-item-sm) !important;
+        gap: 0;
+    }
+    .proyecto-item.row {
+        gap: 0;
+    }
+    .proyecto-img {
+        width: 100% !important;
+        order: 1;
+    }
+    .imagen-proyecto {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+    .info-proyecto,
+    .info-proyecto2 {
+        width: 100% !important;
+        order: 2;
+        margin-top: 2.25rem;
+    }
+    .proyecto-item .proyecto-img,
+    .proyecto-item .info-proyecto2 + .proyecto-img {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .info-proyecto p,
+    .info-proyecto2 p {
+        text-align: start;
+        margin-left: 0;
+        max-width: 100%;
+    }
+    .correoText .linea-vertical {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .linea-vertical {
+        display: none;
+    }
+    .redes-sociales {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin: 3rem auto 0;
+        padding-left: 0;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .redes-sociales a {
+        margin-bottom: 0;
+    }
+    .correo {
+        display: none;
+    }
+    footer div {
+        padding-top: var(--space-inner);
+    }
+    .nombre {
+        font-size: 2.4rem;
+    }
+    .subtitulo {
+        font-size: 2rem;
+    }
+    .intro {
+        font-size: 1rem;
+    }
+    #foto-perfil {
+        width: 70%;
+        max-width: 280px;
+    }
+    .marco {
+        width: 75%;
+        max-width: 320px;
+    }
+    .proyecto-item {
+        margin-bottom: 3rem !important;
+    }
+    .capa {
+        display: none;
+    }
+    .contacto .boton {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 576px) {
+    #cuerpo {
+        margin: 0 20px;
+        padding: 4%;
+    }
+    .sobreMi,
+    .contacto {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .nombre {
+        font-size: 2rem;
+    }
+    .subtitulo {
+        font-size: 1.65rem;
+    }
+    .subtitulo-pestana {
+        font-size: 14px;
+        margin-bottom: 2rem;
+    }
+    .contacto h2 {
+        font-size: 1.85rem;
+    }
+    .contacto .boton {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+    .proyecto-item {
+        margin-bottom: 2.5rem !important;
+    }
+    .info-proyecto,
+    .info-proyecto2 {
+        margin-top: 1.25rem;
+    }
+}
