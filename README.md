@@ -1,43 +1,44 @@
 # Portafolio · Saimon González
 
-Sitio web personal para **Saimon González** — Creador de contenido, Audiovisual Producer, Lifestyle, Design, Socials y Beauty pageants.
+Sitio web personal para **Saimon González** — creador de contenido, productor audiovisual, diseño, lifestyle y cobertura de certámenes de belleza.
 
-Inspirado en su perfil de [Instagram @saimongonzalez_](https://www.instagram.com/saimongonzalez_/).
+Enlazado con el perfil de [Instagram @saimongonzalez_](https://www.instagram.com/saimongonzalez_/).
 
-## Cómo ver el sitio
+## Contenido principal
 
-1. Coloca la carpeta `portafolio-saimon-gonzalez` en tu servidor local (por ejemplo `c:\xampp\htdocs\`).
-2. Abre en el navegador: `http://localhost/portafolio-saimon-gonzalez/`
+- **Inicio** — Presentación y texto introductorio.
+- **Sobre mí** — Biografía y foto de perfil.
+- **Trabajo** — Tres bloques temáticos; cada uno muestra un **carrusel de publicaciones de Instagram** (embed oficial). Las URLs de cada slide están en `index.html` (`data-instgrm-url` dentro de `.instagram-slot`). Los embeds se cargan de forma perezosa con `script.js` y el script `instagram.com/embed.js`.
+- **Contacto** — Enlaces a Instagram, WhatsApp y correo (`mailto:`).
 
-## Imágenes
+## Imágenes (`images/`)
 
-En la carpeta `images/` se usan estos archivos:
+| Archivo | Uso |
+|--------|-----|
+| `imagen de saimon.jpeg` | Foto en la sección "Sobre mí". |
+| `saimon isotipo.png` | Favicon / isotipo. |
+| `saimon logo principal.png` | Logo en la barra de navegación. |
+| `favicon.svg` | Favicon vectorial. |
 
-- **`imagen de saimon.jpeg`** — Foto de Saimon González (sección "Sobre mí").
-- **`saimon isotipo.png`** — Favicon e isotipo (iniciales SG) para la pestaña del navegador.
-- **`saimon logo principal.png`** — Logo principal (saimon gonzalez + CREADOR DE CONTENIDO) en la barra de navegación.
-
-Opcional, en `images/trabajo/`:
-
-- `audiovisual.jpg` — Producción audiovisual
-- `lifestyle.jpg` — Lifestyle & design
-- `beauty-pageants.jpg` — Beauty pageants y eventos
-
-Si no añades las imágenes de trabajo, el sitio usará placeholders automáticamente. Ver también `images/LEEME-imagenes.txt`.
+La carpeta `images/trabajo/` puede contener recursos antiguos o alternativos; **las secciones de trabajo del sitio usan los carruseles de Instagram**, no es obligatorio mantener allí imágenes estáticas para esos bloques.
 
 ## Personalizar
 
-- **Email / contacto:** en `index.html` puedes cambiar el enlace "Contactar por Instagram" o añadir un `mailto:` con tu correo.
-- **Colores:** en `CSS/styles.css` las variables `:root` (--accent, --bg-dark, etc.) definen la paleta.
+- **Enlaces y textos:** edita `index.html` (contacto, anclas `#scrollspyHeading1` … `4`, URLs de Instagram en los carruseles).
+- **Nuevo carrusel:** duplica la estructura de un bloque existente, asigna un `id` único al `.carousel` y añade ese `id` al array `instagramCarouselIds` en `script.js`.
+- **Colores y tipografía:** variables en `CSS/styles.css` (`:root`: `--text-dark`, `--bg-cream`, `--accent`, fuentes, etc.). El diseño base es **claro** (blanco / crema / grises), no un tema oscuro.
+- **Vista móvil:** reglas adicionales en `CSS/responsive.css`.
 
-## Estructura
+## Estructura del proyecto
 
-- `index.html` — Página principal
-- `CSS/styles.css` — Estilos (tema oscuro + acento coral)
-- `CSS/responsive.css` — Diseño adaptable
-- `script.js` — Animaciones (GSAP) y menú activo
-- `images/` — Favicon y fotos (perfil y trabajo)
+| Ruta | Descripción |
+|------|-------------|
+| `index.html` | Página única y secciones. |
+| `CSS/styles.css` | Estilos globales y componentes. |
+| `CSS/responsive.css` | Media queries y ajustes móvil. |
+| `script.js` | GSAP / ScrollTrigger, menú activo al scroll, inicialización de carruseles Instagram. |
+| `images/` | Logo, favicon y foto de perfil. |
 
----
+## Tecnologías
 
-Construido con Bootstrap 5, GSAP y fuentes Google (Cormorant Garamond, Outfit).
+Bootstrap 5, GSAP (ScrollTrigger), fuentes Google (**Cormorant Garamond**, **Outfit**), embeds oficiales de Instagram.
