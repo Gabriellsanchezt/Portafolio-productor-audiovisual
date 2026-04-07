@@ -31,10 +31,40 @@
 }
 
 @media (max-width: 991px) {
+    /* Sin menú hamburguesa en móvil/tablet: solo barra con logo */
+    .hamburguesa {
+        display: none !important;
+    }
+
+    #offcanvasNavbar.offcanvas {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    .navbar.fixed-top > .container-fluid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 88px;
+        padding-top: 0.35rem;
+        padding-bottom: 0.35rem;
+    }
+
+    .navbar .navbar-brand {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .barranav {
+        height: auto;
+        min-height: 96px;
+    }
+
     .logo-principal {
         height: 56px;
         min-height: 56px;
-        max-width: 260px;
+        max-width: 280px;
     }
     #cuerpo {
         margin: 0 40px;
@@ -61,54 +91,10 @@
     .subtitulo-pestana {
         margin-bottom: 50px;
     }
-    .barranav {
-        min-height: 0;
-    }
-
-    .navbar-bar-inner {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem 0;
-        padding-top: 0.4rem;
-        padding-bottom: 0.75rem;
-    }
-
-    .navbar-brand {
-        align-self: flex-start;
-    }
-
-    .navbar-nav-inline {
-        width: 100%;
-        justify-content: center;
-        border-top: 1px solid var(--border);
-        padding-top: 0.7rem;
-    }
-
-    #menu {
-        text-align: center;
-        margin-top: 0;
-        justify-content: center !important;
-        width: 100%;
-        gap: 0.15rem 0.2rem;
-    }
-
-    #navbarNav ul li .nav-link.menu-item {
-        font-size: 0.8125rem;
-        padding: 0.5rem 0.4rem;
-        margin-bottom: 0;
-    }
-
-    .navbar-nav-inline .nav-item-instagram .btn-instagram {
-        margin-left: 0.2rem;
-        height: 36px;
-        font-size: 0.68rem;
-        padding: 0 0.55rem;
-    }
-
     .boton {
         width: auto;
-        margin: 0;
-        display: inline-flex;
+        margin: 20px auto 0;
+        display: inline-block;
     }
     .info-sobreMi {
         width: 100% !important;
@@ -309,26 +295,6 @@
 
     .cont-fotoPerfil {
         min-height: 0;
-    }
-
-    #navbarNav ul li .nav-link.menu-item {
-        font-size: 0.78rem;
-        padding: 0.45rem 0.3rem;
-    }
-
-    .navbar-nav-inline .nav-item-instagram .btn-instagram {
-        height: 34px;
-        font-size: 0.62rem;
-        padding: 0 0.45rem;
-    }
-
-    .navbar-nav-inline .nav-item-instagram .btn-instagram span {
-        display: none;
-    }
-
-    .navbar-nav-inline .nav-item-instagram .btn-instagram .icon-instagram-btn {
-        width: 20px;
-        height: 20px;
     }
 
     .contacto h2 {

@@ -89,12 +89,30 @@ const observer = new IntersectionObserver(funcionObserver, {
 
 secciones.forEach((seccion) => observer.observe(seccion));
 
-// ------------------------------------------- Quitar filtro de la foto de perfil al hacer clic (responsive) ------------------------------------------
+// ------------------------------------------- Foto "Sobre mí": ampliar en modal al pulsar ------------------------------------------
 
 const imagenPerfil = document.querySelector("#foto-perfil");
-if (imagenPerfil) {
-    imagenPerfil.addEventListener("click", () => {
+const modalFotoPerfil = document.getElementById("modalFotoPerfil");
+const modalFotoPerfilImg = document.getElementById("modal-foto-perfil-img");
+
+if (imagenPerfil && modalFotoPerfil && modalFotoPerfilImg && typeof bootstrap !== "undefined") {
+    imagenPerfil.setAttribute("role", "button");
+    imagenPerfil.setAttribute("tabindex", "0");
+    imagenPerfil.setAttribute("aria-label", "Ampliar foto de perfil");
+
+    const abrirModalFotoPerfil = () => {
         imagenPerfil.classList.remove("filtro");
+        modalFotoPerfilImg.src = imagenPerfil.currentSrc || imagenPerfil.src;
+        modalFotoPerfilImg.alt = imagenPerfil.alt || "";
+        bootstrap.Modal.getOrCreateInstance(modalFotoPerfil).show();
+    };
+
+    imagenPerfil.addEventListener("click", abrirModalFotoPerfil);
+    imagenPerfil.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            abrirModalFotoPerfil();
+        }
     });
 }
 
