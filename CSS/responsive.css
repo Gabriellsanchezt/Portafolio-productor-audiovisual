@@ -39,6 +39,13 @@
         padding: 5%;
         max-width: 100%;
     }
+
+    /* col-10 estrechaba demasiado el contenido en móvil */
+    #cuerpo #contenido.scrollspy-example.col-10 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
     .sobreMi {
         margin-left: -1rem;
         margin-right: -1rem;
@@ -72,29 +79,142 @@
         position: relative;
         z-index: 2;
         top: 0;
-        width: 60%;
-        max-width: 280px;
-        margin: 0 auto 2rem;
+        width: min(88vw, 340px);
+        max-width: 100%;
+        min-width: 260px;
+        max-height: none;
+        margin: 0 auto 2.5rem;
         display: block;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
     }
     .cont-fotoPerfil {
         width: 100%;
-        min-height: 340px;
+        min-height: 420px;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
+        padding-bottom: 0.5rem;
     }
     .marco {
         position: absolute;
         z-index: 1;
-        top: 28px;
+        top: 24px;
         left: 50%;
-        transform: translateX(calc(-50% + 14px));
-        width: 65%;
-        max-width: 300px;
-        min-height: 280px;
-        height: 320px;
+        transform: translateX(calc(-50% + 12px));
+        width: min(92vw, 360px);
+        max-width: calc(100% - 8px);
+        min-height: 340px;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        max-height: 480px;
+    }
+
+    /* Títulos de sección: ancho completo y espacio respecto al contenido */
+    .sobreMi .subtitulo-pestana,
+    .proyectos .subtitulo-pestana {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-bottom: 0.75rem !important;
+        padding-top: 0.25rem;
+    }
+
+    .sobreMi .linea,
+    .proyectos .linea {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 2.25rem !important;
+    }
+
+    .sobreMi.row > .info-sobreMi {
+        margin-top: 0;
+    }
+
+    /* Menú lateral: panel legible y botones táctiles */
+    #offcanvasNavbar.offcanvas {
+        width: min(92vw, 340px) !important;
+        border-left: 1px solid var(--border);
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+    }
+
+    #offcanvasNavbar .offcanvas-header {
+        padding: 1.25rem 1.25rem 1rem;
+        border-bottom: 1px solid var(--border);
+        min-height: 4.25rem;
+        align-items: center;
+    }
+
+    #offcanvasNavbar .offcanvas-body {
+        padding: 1.5rem 1.25rem 2rem !important;
+    }
+
+    #offcanvasNavbar #menu {
+        margin-top: 0 !important;
+        text-align: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #offcanvasNavbar #menu .nav-item {
+        margin-bottom: 0.35rem;
+    }
+
+    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item {
+        display: block;
+        padding: 0.95rem 1rem;
+        font-size: 1.125rem;
+        border-radius: 8px;
+        transition: background 0.2s ease;
+    }
+
+    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item:hover,
+    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item:focus {
+        background: var(--bg-cream);
+    }
+
+    #offcanvasNavbar #navbarNav .boton.btn-instagram {
+        width: 100%;
+        max-width: 280px;
+        margin: 1.75rem auto 0 !important;
+        justify-content: center;
+        height: 48px;
+        font-size: 0.9rem;
+    }
+
+    .hamburguesa {
+        min-width: 44px;
+        min-height: 44px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        justify-content: center;
+        border-radius: 10px;
+        transition: background 0.2s ease;
+    }
+
+    .hamburguesa:hover,
+    .hamburguesa:focus-visible {
+        background: var(--bg-gray-light) !important;
+    }
+
+    .hamburguesa > div {
+        width: 22px;
+        margin: 0 auto;
+    }
+
+    .cerrar {
+        min-width: 44px;
+        min-height: 44px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        justify-content: center;
+        border-radius: 10px;
     }
     .proyectos {
         margin-top: var(--space-section-sm) !important;
@@ -170,12 +290,17 @@
         font-size: 1rem;
     }
     #foto-perfil {
-        width: 70%;
-        max-width: 280px;
+        width: min(90vw, 360px);
+        min-width: 280px;
+        max-width: 100%;
     }
     .marco {
-        width: 75%;
-        max-width: 320px;
+        width: min(94vw, 380px);
+        max-width: calc(100% - 4px);
+        min-height: 360px;
+    }
+    .cont-fotoPerfil {
+        min-height: 440px;
     }
     .proyecto-item {
         margin-bottom: 3rem !important;
@@ -191,8 +316,8 @@
 
 @media (max-width: 576px) {
     #cuerpo {
-        margin: 0 20px;
-        padding: 4%;
+        margin: 0 16px;
+        padding: 4% 3%;
     }
     .sobreMi,
     .contacto {
@@ -208,8 +333,44 @@
         font-size: 1.65rem;
     }
     .subtitulo-pestana {
-        font-size: 14px;
-        margin-bottom: 2rem;
+        font-size: 0.8125rem;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.65rem !important;
+    }
+
+    .sobreMi .linea,
+    .proyectos .linea {
+        margin-bottom: 2.75rem !important;
+    }
+
+    .proyectos {
+        padding-top: 0.5rem;
+    }
+
+    #foto-perfil {
+        width: min(92vw, 380px);
+        min-width: 0;
+        max-height: 520px;
+    }
+
+    .marco {
+        width: min(96vw, 400px);
+        min-height: 380px;
+        top: 20px;
+        transform: translateX(calc(-50% + 10px));
+    }
+
+    .cont-fotoPerfil {
+        min-height: 460px;
+    }
+
+    #offcanvasNavbar.offcanvas {
+        width: min(100vw, 360px) !important;
+    }
+
+    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item {
+        font-size: 1.2rem;
+        padding: 1rem 1rem;
     }
     .contacto h2 {
         font-size: 1.85rem;
