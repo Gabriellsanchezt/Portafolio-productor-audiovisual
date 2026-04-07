@@ -31,17 +31,6 @@
 }
 
 @media (max-width: 991px) {
-    /* Sin menú hamburguesa en móvil/tablet: solo barra con logo */
-    .hamburguesa {
-        display: none !important;
-    }
-
-    #offcanvasNavbar.offcanvas {
-        display: none !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-    }
-
     .navbar.fixed-top > .container-fluid {
         display: flex;
         justify-content: center;

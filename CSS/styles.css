@@ -157,24 +157,7 @@ body {
     text-align: end;
 }
 
-/* --------------------------------------------  MENÚ HAMBURGUESA  ----------------------------------- */
-
-.hamburguesa {
-    flex-direction: column;
-    width: 3rem;
-    height: 3rem;
-    border: 0;
-    background: transparent !important;
-    gap: 0.6rem;
-}
-
-.hamburguesa > div {
-    background: var(--text-dark) !important;
-    height: 2px;
-    width: 100%;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
+/* --------------------------------------------  MENÚ HAMBURGUESA (offcanvas; botón retirado)  ----------------------------------- */
 
 .cerrar {
     display: flex;
@@ -212,6 +195,13 @@ body {
 
 .offcanvas {
     background: var(--bg-white) !important;
+}
+
+/* Panel de menú: sin botón hamburguesa; se mantiene en el DOM para enlaces usados por scroll (script) */
+#offcanvasNavbar.offcanvas {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .offcanvas-title {
@@ -406,17 +396,47 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-.modal-foto-perfil-cerrar {
-    margin: 0.75rem 0.75rem 0 0;
-    padding: 0.65rem;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.45) !important;
-    opacity: 1;
+.modal-foto-perfil-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1060;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.85rem 1rem 2rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
 }
 
-.modal-foto-perfil-cerrar:hover {
-    background: rgba(0, 0, 0, 0.65) !important;
-    opacity: 1;
+.modal-foto-perfil-boton-cerrar {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.15rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-dark) !important;
+    background: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    border-radius: 999px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.modal-foto-perfil-boton-cerrar:hover,
+.modal-foto-perfil-boton-cerrar:focus {
+    background: var(--bg-cream) !important;
+    color: var(--text-dark) !important;
+    transform: scale(1.03);
+}
+
+.modal-foto-perfil-icono-cerrar {
+    flex-shrink: 0;
 }
 
 .marco {

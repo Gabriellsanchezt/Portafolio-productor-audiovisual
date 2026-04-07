@@ -27,13 +27,6 @@
                         <a class="navbar-brand" href="#" aria-label="Inicio">
                         <img src="./images/saimon logo principal.png" alt="Saimon González - Creador de contenido" class="logo-principal start-animation">
                     </a>
-                        <button class="hamburguesa d-flex d-lg-none start-animation" type="button"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                            aria-controls="offcanvasNavbar" aria-label="Abrir menú">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </button>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                             aria-labelledby="offcanvasNavbarLabel" data-bs-backdrop="false">
                             <div class="offcanvas-header">
@@ -390,12 +383,17 @@
 
     <div class="modal fade" id="modalFotoPerfil" tabindex="-1" aria-labelledby="modalFotoPerfilTitulo" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered modal-xl modal-foto-perfil-dialog">
-            <div class="modal-content modal-foto-perfil-content border-0 shadow-none">
-                <div class="modal-header border-0 position-absolute top-0 end-0 w-auto p-0 z-3">
-                    <h2 class="visually-hidden" id="modalFotoPerfilTitulo">Foto ampliada</h2>
-                    <button type="button" class="btn-close btn-close-white modal-foto-perfil-cerrar" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-content modal-foto-perfil-content border-0 shadow-none position-relative">
+                <h2 class="visually-hidden" id="modalFotoPerfilTitulo">Foto ampliada</h2>
+                <div class="modal-foto-perfil-toolbar">
+                    <button type="button" class="btn modal-foto-perfil-boton-cerrar" data-bs-dismiss="modal" aria-label="Cerrar foto ampliada">
+                        <svg class="modal-foto-perfil-icono-cerrar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+                        </svg>
+                        <span>Cerrar</span>
+                    </button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center p-3 p-md-4">
+                <div class="modal-body d-flex align-items-center justify-content-center p-3 pt-5 p-md-4">
                     <img id="modal-foto-perfil-img" src="" alt="" class="modal-foto-perfil-img img-fluid rounded">
                 </div>
             </div>
