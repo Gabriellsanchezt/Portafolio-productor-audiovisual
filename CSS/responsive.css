@@ -225,4 +225,27 @@
     .info-proyecto2 {
         margin-top: 1.25rem;
     }
+
+    /* Carrusel Instagram: barra inferior en móvil */
+    .proyecto-carousel-nav-bar {
+        flex-wrap: nowrap;
+        padding: 0.85rem 0.65rem 0.95rem;
+    }
+
+    .proyecto-carousel-nav-bar .proyecto-carousel-control {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 0;
+        padding: 0.7rem 0.65rem !important;
+        justify-content: center;
+    }
+
+    .proyecto-carousel-btn-label {
+        font-size: 0.78rem;
+    }
+
+    .proyecto-carousel .proyecto-carousel-icon {
+        width: 1.1rem;
+        height: 1.1rem;
+        background-size: 1.1rem 1.1rem;
+    }
 }

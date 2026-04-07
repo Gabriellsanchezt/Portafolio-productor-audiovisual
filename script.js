@@ -97,3 +97,55 @@ if (imagenPerfil) {
         imagenPerfil.classList.remove("filtro");
     });
 }
+
+// Carruseles Instagram (Trabajo, Lifestyle): embed perezoso por slide
+const instagramCarouselIds = ["carouselInstagramTrabajo", "carouselInstagramLifestyle"];
+const instagramCarousels = instagramCarouselIds
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+if (instagramCarousels.length) {
+    const processInstagramEmbeds = () => {
+        if (window.instgrm && window.instgrm.Embeds) {
+            window.instgrm.Embeds.process();
+        }
+    };
+
+    const ensureSlotEmbed = (slot) => {
+        if (!slot || slot.getAttribute("data-embedded") === "true") return;
+        const url = slot.getAttribute("data-instgrm-url");
+        if (!url) return;
+        const bq = document.createElement("blockquote");
+        bq.className = "instagram-media";
+        bq.setAttribute("data-instgrm-permalink", url);
+        bq.setAttribute("data-instgrm-version", "14");
+        slot.appendChild(bq);
+        slot.setAttribute("data-embedded", "true");
+        processInstagramEmbeds();
+    };
+
+    const wireCarousel = (carouselEl) => {
+        const embedActiveSlide = () => {
+            const active = carouselEl.querySelector(".carousel-item.active .instagram-slot");
+            ensureSlotEmbed(active);
+        };
+        embedActiveSlide();
+        carouselEl.addEventListener("slid.bs.carousel", () => {
+            const slot = carouselEl.querySelector(".carousel-item.active .instagram-slot");
+            ensureSlotEmbed(slot);
+        });
+    };
+
+    const runAll = () => instagramCarousels.forEach(wireCarousel);
+
+    const existingEmbedScript = document.querySelector('script[src*="instagram.com/embed.js"]');
+    if (existingEmbedScript) {
+        runAll();
+    } else {
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.instagram.com/embed.js";
+        s.onload = () => runAll();
+        document.body.appendChild(s);
+    }
+}
