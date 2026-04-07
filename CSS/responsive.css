@@ -13,8 +13,10 @@
         min-height: 280px;
     }
     #foto-perfil {
-        width: 240px;
+        width: min(300px, 38vw);
+        max-width: 100%;
         margin-left: 30px;
+        object-position: center 22%;
     }
     .contacto .boton {
         margin-left: 50%;
@@ -59,56 +61,91 @@
     .subtitulo-pestana {
         margin-bottom: 50px;
     }
+    .barranav {
+        min-height: 0;
+    }
+
+    .navbar-bar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem 0;
+        padding-top: 0.4rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .navbar-brand {
+        align-self: flex-start;
+    }
+
+    .navbar-nav-inline {
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid var(--border);
+        padding-top: 0.7rem;
+    }
+
     #menu {
         text-align: center;
-        margin-top: 100px;
+        margin-top: 0;
+        justify-content: center !important;
+        width: 100%;
+        gap: 0.15rem 0.2rem;
     }
-    #navbarNav ul li a {
-        font-size: 1.1rem;
-        margin-bottom: 16px;
+
+    #navbarNav ul li .nav-link.menu-item {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.4rem;
+        margin-bottom: 0;
     }
+
+    .navbar-nav-inline .nav-item-instagram .btn-instagram {
+        margin-left: 0.2rem;
+        height: 36px;
+        font-size: 0.68rem;
+        padding: 0 0.55rem;
+    }
+
     .boton {
         width: auto;
-        margin: 20px auto 0;
-        display: inline-block;
+        margin: 0;
+        display: inline-flex;
     }
     .info-sobreMi {
         width: 100% !important;
     }
+    /* Foto de perfil: sin marco superpuesto (evita desalineación); encuadre tipo editorial */
+    .sobreMi .cont-fotoPerfil .marco {
+        display: none;
+    }
+
     #foto-perfil {
         position: relative;
         z-index: 2;
         top: 0;
-        width: min(88vw, 340px);
+        width: min(92vw, 400px);
         max-width: 100%;
-        min-width: 260px;
+        min-width: 0;
         max-height: none;
         margin: 0 auto 2.5rem;
         display: block;
         aspect-ratio: 3 / 4;
         object-fit: cover;
+        object-position: center 20%;
+        border-radius: 12px;
+        border: 3px solid var(--text-dark);
+        box-shadow:
+            0 16px 48px rgba(0, 0, 0, 0.12),
+            12px 12px 0 var(--bg-gray-light);
     }
+
     .cont-fotoPerfil {
         width: 100%;
-        min-height: 420px;
+        min-height: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding-bottom: 0.5rem;
-    }
-    .marco {
-        position: absolute;
-        z-index: 1;
-        top: 24px;
-        left: 50%;
-        transform: translateX(calc(-50% + 12px));
-        width: min(92vw, 360px);
-        max-width: calc(100% - 8px);
-        min-height: 340px;
-        height: auto;
-        aspect-ratio: 3 / 4;
-        max-height: 480px;
+        padding-bottom: 1rem;
     }
 
     /* Títulos de sección: ancho completo y espacio respecto al contenido */
@@ -135,87 +172,6 @@
         margin-top: 0;
     }
 
-    /* Menú lateral: panel legible y botones táctiles */
-    #offcanvasNavbar.offcanvas {
-        width: min(92vw, 340px) !important;
-        border-left: 1px solid var(--border);
-        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
-    }
-
-    #offcanvasNavbar .offcanvas-header {
-        padding: 1.25rem 1.25rem 1rem;
-        border-bottom: 1px solid var(--border);
-        min-height: 4.25rem;
-        align-items: center;
-    }
-
-    #offcanvasNavbar .offcanvas-body {
-        padding: 1.5rem 1.25rem 2rem !important;
-    }
-
-    #offcanvasNavbar #menu {
-        margin-top: 0 !important;
-        text-align: center;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    #offcanvasNavbar #menu .nav-item {
-        margin-bottom: 0.35rem;
-    }
-
-    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item {
-        display: block;
-        padding: 0.95rem 1rem;
-        font-size: 1.125rem;
-        border-radius: 8px;
-        transition: background 0.2s ease;
-    }
-
-    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item:hover,
-    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item:focus {
-        background: var(--bg-cream);
-    }
-
-    #offcanvasNavbar #navbarNav .boton.btn-instagram {
-        width: 100%;
-        max-width: 280px;
-        margin: 1.75rem auto 0 !important;
-        justify-content: center;
-        height: 48px;
-        font-size: 0.9rem;
-    }
-
-    .hamburguesa {
-        min-width: 44px;
-        min-height: 44px;
-        width: 44px;
-        height: 44px;
-        padding: 10px;
-        justify-content: center;
-        border-radius: 10px;
-        transition: background 0.2s ease;
-    }
-
-    .hamburguesa:hover,
-    .hamburguesa:focus-visible {
-        background: var(--bg-gray-light) !important;
-    }
-
-    .hamburguesa > div {
-        width: 22px;
-        margin: 0 auto;
-    }
-
-    .cerrar {
-        min-width: 44px;
-        min-height: 44px;
-        width: 44px;
-        height: 44px;
-        padding: 10px;
-        justify-content: center;
-        border-radius: 10px;
-    }
     .proyectos {
         margin-top: var(--space-section-sm) !important;
     }
@@ -290,17 +246,12 @@
         font-size: 1rem;
     }
     #foto-perfil {
-        width: min(90vw, 360px);
-        min-width: 280px;
+        width: min(94vw, 420px);
         max-width: 100%;
     }
-    .marco {
-        width: min(94vw, 380px);
-        max-width: calc(100% - 4px);
-        min-height: 360px;
-    }
+
     .cont-fotoPerfil {
-        min-height: 440px;
+        min-height: 0;
     }
     .proyecto-item {
         margin-bottom: 3rem !important;
@@ -348,30 +299,38 @@
     }
 
     #foto-perfil {
-        width: min(92vw, 380px);
+        width: min(94vw, 400px);
         min-width: 0;
-        max-height: 520px;
-    }
-
-    .marco {
-        width: min(96vw, 400px);
-        min-height: 380px;
-        top: 20px;
-        transform: translateX(calc(-50% + 10px));
+        max-height: 560px;
+        box-shadow:
+            0 14px 40px rgba(0, 0, 0, 0.11),
+            10px 10px 0 var(--bg-gray-light);
     }
 
     .cont-fotoPerfil {
-        min-height: 460px;
+        min-height: 0;
     }
 
-    #offcanvasNavbar.offcanvas {
-        width: min(100vw, 360px) !important;
+    #navbarNav ul li .nav-link.menu-item {
+        font-size: 0.78rem;
+        padding: 0.45rem 0.3rem;
     }
 
-    #offcanvasNavbar #navbarNav ul li .nav-link.menu-item {
-        font-size: 1.2rem;
-        padding: 1rem 1rem;
+    .navbar-nav-inline .nav-item-instagram .btn-instagram {
+        height: 34px;
+        font-size: 0.62rem;
+        padding: 0 0.45rem;
     }
+
+    .navbar-nav-inline .nav-item-instagram .btn-instagram span {
+        display: none;
+    }
+
+    .navbar-nav-inline .nav-item-instagram .btn-instagram .icon-instagram-btn {
+        width: 20px;
+        height: 20px;
+    }
+
     .contacto h2 {
         font-size: 1.85rem;
     }

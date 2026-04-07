@@ -53,9 +53,50 @@ body {
 /* ----------------------------------------  BARRA DE NAVEGACIÓN  ------------------------------ */
 
 .barranav {
-    height: 120px;
+    min-height: 120px;
     overflow-x: hidden;
     width: 100%;
+}
+
+.navbar-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.25rem;
+    width: 100%;
+}
+
+.navbar-nav-inline {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.navbar-nav-inline #menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.15rem 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-nav-inline #menu .nav-item {
+    margin: 0;
+}
+
+.navbar-nav-inline #menu .nav-link {
+    padding: 0.45rem 0.65rem;
+    white-space: nowrap;
+}
+
+.navbar-nav-inline .nav-item-instagram .boton.btn-instagram {
+    margin-left: 0.35rem;
 }
 
 .navbar {
@@ -155,67 +196,6 @@ body {
 
 #menu {
     text-align: end;
-}
-
-/* --------------------------------------------  MENÚ HAMBURGUESA  ----------------------------------- */
-
-.hamburguesa {
-    flex-direction: column;
-    width: 3rem;
-    height: 3rem;
-    border: 0;
-    background: transparent !important;
-    gap: 0.6rem;
-}
-
-.hamburguesa > div {
-    background: var(--text-dark) !important;
-    height: 2px;
-    width: 100%;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-.cerrar {
-    display: flex;
-    flex-direction: column;
-    width: 3rem;
-    height: 3rem;
-    border: 0;
-    background: transparent !important;
-    gap: 0.6rem;
-}
-
-.cerrar > div {
-    background: var(--text-dark) !important;
-    height: 2px;
-    width: 100%;
-    border-radius: 2px;
-    transform-origin: center;
-}
-
-.cerrar div:first-child {
-    transform: rotate(45deg) translate(2px, 2px);
-}
-
-.cerrar div:nth-child(2) {
-    opacity: 0;
-}
-
-.cerrar div:last-child {
-    transform: rotate(-45deg) translate(2px, -2px);
-}
-
-.offcanvas-backdrop.show {
-    opacity: 0 !important;
-}
-
-.offcanvas {
-    background: var(--bg-white) !important;
-}
-
-.offcanvas .nav-link {
-    color: var(--text-body) !important;
 }
 
 /* --------------------------------------------  SECCIÓN INICIO  ----------------------------------- */
