@@ -98,8 +98,12 @@ if (imagenPerfil) {
     });
 }
 
-// Carruseles Instagram (Trabajo, Lifestyle): embed perezoso por slide
-const instagramCarouselIds = ["carouselInstagramTrabajo", "carouselInstagramLifestyle"];
+// Carruseles Instagram (Trabajo, Lifestyle, Beauty): embed perezoso por slide
+const instagramCarouselIds = [
+    "carouselInstagramTrabajo",
+    "carouselInstagramLifestyle",
+    "carouselInstagramBeauty",
+];
 const instagramCarousels = instagramCarouselIds
     .map((id) => document.getElementById(id))
     .filter(Boolean);

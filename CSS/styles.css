@@ -412,6 +412,15 @@ body {
     align-self: center;
 }
 
+/* Tercer bloque (Beauty pageants): mismo esquema que el primero */
+.proyectos article.proyecto-item:nth-of-type(3) {
+    align-items: center;
+}
+
+.proyectos article.proyecto-item:nth-of-type(3) .info-proyecto {
+    align-self: center;
+}
+
 .proyecto-img {
     padding: 0 !important;
     padding-right: var(--gap-proyecto) !important;
